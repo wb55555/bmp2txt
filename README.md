@@ -27,4 +27,3 @@ vim txtname.txt
 - 4bit.bmp>>>>>>//example of bmpfile
 - 8bit.bmp>>>>>>//example of bmpfile
 - 24bit.bmp>>>>>//example of bmpfile
-[TOC]
