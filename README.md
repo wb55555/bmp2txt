@@ -1,17 +1,17 @@
 bmp2txt
 =====
 
-## Function
+### Function
 - Read 1, 4, 8 or 24bit's .bmpfile.
 - Show datas of bmpfliehead and bmpfliehead in the terminal.
 - Output all of the bmpflie's datas in a .txtfile.
 
-## Dependencies
+### Dependencies
 - C++ language
 - Linux
 - vim editor
 
-## Running
+### Running
 ```
 make
 ./b2t bmpname.bmp txtname.txt
@@ -19,7 +19,7 @@ vim txtname.txt
 :set tabstop=16
 ```
 
-## File Description
+### File Description
 - README.md>>>>>//help
 - bmp2txt.cpp>>>//program
 - bmp.h>>>>>>>>>//definition of bmpfile's fliehead, fliehead and colortable
