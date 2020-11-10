@@ -20,10 +20,11 @@ vim txtname.txt
 ```
 
 ### File Description
-- README.md>>>>>//help
-- bmp2txt.cpp>>>>//program
-- bmp.h>>>>>>>>//definition of bmpfile's fliehead, fliehead and colortable
-- 1bit.bmp>>>>>>//example of bmpfile
-- 4bit.bmp>>>>>>//example of bmpfile
-- 8bit.bmp>>>>>>//example of bmpfile
-- 24bit.bmp>>>>>//example of bmpfile
+- README.md-----//help
+- bmp2txt.cpp----//program
+- bmp.h--------//definition of bmpfile's fliehead, fliehead and colortable
+- 1bit.bmp------//example of bmpfile
+- 4bit.bmp------//example of bmpfile
+- 8bit.bmp------//example of bmpfile
+- 24bit.bmp-----//example of bmpfile
+- Makefile------//auto-compile a b2t file
