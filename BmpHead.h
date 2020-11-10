@@ -3,6 +3,8 @@
 
 #include"bmp.h"
 
+
+
 class BmpHead
 {
     public:

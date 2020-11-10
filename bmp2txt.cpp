@@ -1,7 +1,9 @@
-#include"BmpHead.cpp"
-#include"ColorTable.cpp"
-#include"Data_148.cpp"
-#include"Data_24.cpp"
+#include<iostream>
+
+#include"BmpHead.h"
+#include"ColorTable.h"
+#include"Data_148.h"
+#include"Data_24.h"
 
 using namespace std;
 
