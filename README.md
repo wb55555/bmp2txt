@@ -20,7 +20,7 @@ vim txtname.txt
 ```
 
 ### File Description
-- README.md>>>>>//help
+README.md>>>>>//help  
 bmp2txt.cpp:    program
 - bmp.h>>>>>>>>>//definition of bmpfile's fliehead, fliehead and colortable
 - 1bit.bmp>>>>>>//example of bmpfile
