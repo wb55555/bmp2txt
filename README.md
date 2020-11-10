@@ -3,7 +3,7 @@ bmp2txt
 
 ### Function
 - Read 1, 4, 8 or 24bit's .bmpfile.
-- Show datas of bmpfliehead and bmpfliehead in the terminal.
+- Show datas of bmpfliehead and bmpfliehead on the terminal.
 - Output all of the .bmpflie's datas in a .txtfile.
 
 ### Dependencies
