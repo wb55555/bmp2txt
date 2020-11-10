@@ -1,11 +1,12 @@
-# bmp2txt
+bmp2txt
+=====
 
 ## Function
-This program can read 1, 4, 8 or 24bit's .bmpfile,
+Read 1, 4, 8 or 24bit's .bmpfile.
 ***
-show datas of bmpfliehead and bmpfliehead in the terminal,
+Show datas of bmpfliehead and bmpfliehead in the terminal.
 ***
-output all of the bmpflie's datas in a .txtfile.
+Output all of the bmpflie's datas in a .txtfile.
 
 ## Dependencies
 C++ language
@@ -26,4 +27,7 @@ vim txtname.txt
 - README.md     //help
 - bmp2txt.cpp   //program
 - bmp.h         //definition of bmpfile's fliehead, fliehead and colortable
-- 1bit
+- 1bit.bmp      //example of bmpfile
+- 4bit.bmp      //example of bmpfile
+- 8bit.bmp      //example of bmpfile
+- 24bit.bmp     //example of bmpfile
