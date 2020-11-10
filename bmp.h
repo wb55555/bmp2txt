@@ -1,10 +1,8 @@
-/* linux_bmp.h*/
-
 #ifndef BMP_H_INCLUDED
 #define BMP_H_INCLUDED
 
-#include <iostream>
 #include <stdint.h>
+
 typedef   struct   tagBITMAPFILEHEADER{
     uint16_t   bfType;                                //2
     uint32_t    bfSize;                                //4
@@ -33,7 +31,5 @@ typedef   struct   tagRGBQUAD{
     uint8_t   rgbRed;                               //1
     uint8_t   rgbReserved;                      //1
   } RGBQUAD;
-
-
 
 #endif // BMP_H_INCLUDED
