@@ -27,4 +27,4 @@ vim txtname.txt
 - 4bit.bmp------//example of bmpfile
 - 8bit.bmp------//example of bmpfile
 - 24bit.bmp-----//example of bmpfile
-- Makefile------//auto-compile a b2t file
+- Makefile------//auto-compile out a b2t file
