@@ -15,16 +15,13 @@ bmp2txt
 ```
 make
 ./b2t bmpname.bmp txtname.txt
+input selection of whether save the datas.
+input selection of how to save the datas.
 vim txtname.txt
-:set tabstop=16
 ```
 
 ### File Description
 - README.md-----//help
 - bmp2txt.cpp---//program
-- bmp.h---------//definition of bmpfile's fliehead, fliehead and colortable
-- 1bit.bmp------//example of bmpfile
-- 4bit.bmp------//example of bmpfile
-- 8bit.bmp------//example of bmpfile
-- 24bit.bmp-----//example of bmpfile
+- bmp.h---------//definition of bmpfile's fliehead, fliehead and data
 - Makefile------//auto-compile out a b2t file
