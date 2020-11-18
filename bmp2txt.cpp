@@ -1,35 +1,78 @@
-#include<iostream>
-
-#include"BmpHead.h"
-#include"ColorTable.h"
-#include"Data_148.h"
-#include"Data_24.h"
+#include <iostream>
+#include<fstream>
+#include"bmp.h"
 
 using namespace std;
 
 int main(int argc, char* argv[])
 {
     if (argc != 3)
-        cout << "you should give one input and one out" << endl;
+        cout << "you should give one inputname.bmp and one outputname.txt" << endl;
+
     else
     {
-        BmpHead B;
-        B.ReadBmp(argv[1]);
-        B.GetFHIH(argv[2]);
+        bmp<1> bmp1;
+        bmp1.load(argv[1]);
+        bmp1.save_head(argv[2]);
 
-        if (B.BitCount != 24)
+        cout << "do you want save the datafile?(y/n)" << endl;
+        char anwser1 = 0;
+        cin >> anwser1;
+        while ((anwser1 != 'y') && (anwser1 != 'n'))
         {
-            ColorTable CT_Data;
-            Data_148 D_148;
-            CT_Data.GetData(B.BitCount, B.P_fp, argv[2]);
-            D_148.GetData(B.Width, B.Height, B.BitCount, B.P_fp, argv[2]);
+            cin.clear();
+            cin.ignore();
+            cout << "please input y or n" << endl;
+            cin >> anwser1;
         }
+
+        if (anwser1 == 'y')
+        {
+            cout << "how do  you want save the datafile? add or cover (a/c)" << endl;
+            char anwser2 = 0;
+            cin >> anwser2;
+            while ((anwser2 != 'a') && (anwser2 != 'c'))
+            {
+                cin.clear();
+                cin.ignore();
+                cout << "please input a or c" << endl;
+                cin >> anwser2;
+            }
+
+            FILE* fp;
+            switch(anwser2)
+            {
+            case 'a':
+                fp = fopen(argv[2], "a");
+                break;
+
+            case 'c':
+                fp = fopen(argv[2], "w");
+                break;
+
+            default:
+                break;
+            }
+
+            fprintf(fp, "-----Data Info-----\n");
+            fprintf(fp, "(   v,   h) R\tG\tB\n\n");
+            for(int h = 0; h < bmp1.get_height(); h++)
+            {
+                for(int v = 0; v < bmp1.get_width(); v++)
+                {
+                    int rdata = bmp1.get_r(v, h);
+                    int gdata = bmp1.get_g(v, h);
+                    int bdata = bmp1.get_b(v, h);
+
+                    fprintf(fp, "(%4d,%4d) %02x\t%02x\t%02x\n", v, h, rdata, gdata, bdata);
+                }
+            }
+
+            fclose(fp);
+        }
+
         else
-        {
-            Data_24 D_24;
-            D_24.GetData(B.Width, B.Height, B.BitCount, B.P_fp, argv[2]);
-        }
+            return 0;
     }
-
-	return 0;
+    return 0;
 }
