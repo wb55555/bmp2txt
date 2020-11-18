@@ -252,8 +252,6 @@ int bmp< BIT>::save_head(char* txtname)
 
         outfile.close();
 
-
-
         return 0;
 }
 
