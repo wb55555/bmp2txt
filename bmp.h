@@ -46,7 +46,7 @@ class bmp
         int load_head(char* filename);
         int load_data(char* filename);
         int save_head(char* txtname);
-        int save_data(char* txtname, int sel);
+        int save_data(char* txtname);
         int get_width();
         int get_height();
         int get_r(int v, int h);
@@ -258,20 +258,10 @@ int bmp< BIT>::save_head(char* txtname)
 }
 
 template<int BIT>
-int bmp< BIT>::save_data(char* txtname, int sel)
+int bmp< BIT>::save_data(char* txtname)
 {
     ofstream outfile;
-    switch (sel)
-    {
-    case 1:
-        outfile.open(txtname, ios::in | ios::trunc);
-        break;
-    case 2:
-        outfile.open(txtname, ios::in | ios::ate);
-        break;
-    default:
-        break;
-    }
+    outfile.open(txtname, ios::in | ios::ate);
 
     if(!outfile)
         cout << "error" << endl;
@@ -280,7 +270,7 @@ int bmp< BIT>::save_data(char* txtname, int sel)
         for (int i = 0; i < height; i++)
             for (int j = 0; j < width; j++)
             {
-                outfile << dec << "(" << j + 1 << " , " << i + 1 << ")\t"<< hex << rbuf[j][i] << "\t" << gbuf[j][i] << "\t" << bbuf[j][i] << endl;
+                outfile << dec << "( " << j + 1 << " , " << i + 1 << " )\t"<< hex << rbuf[j][i] << "\t" << gbuf[j][i] << "\t" << bbuf[j][i] << endl;
             }
 
     outfile.close();

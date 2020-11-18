@@ -64,7 +64,7 @@ int main(int argc, char* argv[])
                     int gdata = bmp1.get_g(v, h);
                     int bdata = bmp1.get_b(v, h);
 
-                    fprintf(fp, "(%4d,%4d) %02x\t%02x\t%02x\n", v, h, rdata, gdata, bdata);
+                    fprintf(fp, "(%4d,%4d) %02x\t%02x\t%02x\n", v + 1, h + 1, rdata, gdata, bdata);
                 }
             }
 
