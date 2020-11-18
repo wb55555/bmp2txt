@@ -11,9 +11,9 @@ int main(int argc, char* argv[])
 
     else
     {
-        bmp<1> bmp1;
-        bmp1.load(argv[1]);
-        bmp1.save_head(argv[2]);
+        bmp b;
+        b.load(argv[1]);
+        b.save_head(argv[2]);
 
         cout << "do you want save the datafile?(y/n)" << endl;
         char anwser1 = 0;
@@ -55,16 +55,16 @@ int main(int argc, char* argv[])
             }
 
             fprintf(fp, "-----Data Info-----\n");
-            fprintf(fp, "(   v,   h) R\tG\tB\n\n");
-            for(int h = 0; h < bmp1.get_height(); h++)
+            fprintf(fp, "(   v,   h) R   G   B\n\n");
+            for(int h = 0; h < b.get_height(); h++)
             {
-                for(int v = 0; v < bmp1.get_width(); v++)
+                for(int v = 0; v < b.get_width(); v++)
                 {
-                    int rdata = bmp1.get_r(v, h);
-                    int gdata = bmp1.get_g(v, h);
-                    int bdata = bmp1.get_b(v, h);
+                    int rdata = b.get_r(v, h);
+                    int gdata = b.get_g(v, h);
+                    int bdata = b.get_b(v, h);
 
-                    fprintf(fp, "(%4d,%4d) %02x\t%02x\t%02x\n", v + 1, h + 1, rdata, gdata, bdata);
+                    fprintf(fp, "(%4d,%4d) %02x  %02x  %02x\n", v + 1, h + 1, rdata, gdata, bdata);
                 }
             }
 

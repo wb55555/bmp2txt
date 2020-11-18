@@ -33,7 +33,6 @@ class BITMAPINFOHEADER{
         uint32_t biClrImportant;                     //4
   };
 
-template<int BIT>
 class bmp
 {
     public:
@@ -67,8 +66,7 @@ class bmp
         unsigned int** bbuf;
 };
 
-template<int BIT>
-int bmp< BIT>::load_head(char* filename)
+int bmp::load_head(char* filename)
 {
     P_fp = fopen(filename, "rb");
     if (P_fp == 0)
@@ -85,8 +83,7 @@ int bmp< BIT>::load_head(char* filename)
     return 0;
 }
 
-template<int BIT>
-int bmp< BIT>::load_data(char* filename)
+int bmp::load_data(char* filename)
 {
     //initialize the rgb data array
     rbuf = new unsigned int* [width];
@@ -124,7 +121,6 @@ int bmp< BIT>::load_data(char* filename)
 
         //load datas
         fread(P_indata, 1, width_byte * height, P_fp);
-        fclose(P_fp);
         //valid data bytes
         int valid_byte = (width * bitcount + 7) / 8;
         unsigned int** P2_valid_data = new unsigned int* [valid_byte];
@@ -190,7 +186,6 @@ int bmp< BIT>::load_data(char* filename)
     {
         //load datas
         fread(P_indata, 1, width_byte * height, P_fp);
-        fclose(P_fp);
 
         rbuf = new unsigned int* [height];
         gbuf = new unsigned int* [height];
@@ -221,8 +216,7 @@ int bmp< BIT>::load_data(char* filename)
     return 0;
 }
 
-template<int BIT>
-int bmp< BIT>::save_head(char* txtname)
+int bmp::save_head(char* txtname)
 {
     ofstream outfile;
 
@@ -255,8 +249,7 @@ int bmp< BIT>::save_head(char* txtname)
         return 0;
 }
 
-template<int BIT>
-int bmp< BIT>::save_data(char* txtname)
+int bmp::save_data(char* txtname)
 {
     ofstream outfile;
     outfile.open(txtname, ios::in | ios::ate);
@@ -275,38 +268,32 @@ int bmp< BIT>::save_data(char* txtname)
     return 0;
 }
 
-template<int BIT>
-int bmp< BIT>::get_width()
+int bmp::get_width()
 {
     return width;
 }
 
-template<int BIT>
-int bmp< BIT>::get_height()
+int bmp::get_height()
 {
     return height;
 }
 
-template<int BIT>
-int bmp< BIT>::get_r(int v, int h)
+int bmp::get_r(int v, int h)
 {
     return rbuf[v][h];
 }
 
-template<int BIT>
-int bmp< BIT>::get_g(int v, int h)
+int bmp::get_g(int v, int h)
 {
     return gbuf[v][h];
 }
 
-template<int BIT>
-int bmp< BIT>::get_b(int v, int h)
+int bmp::get_b(int v, int h)
 {
     return bbuf[v][h];
 }
 
-template<int BIT>
-bmp< BIT>::~bmp()
+bmp::~bmp()
 {
     delete[]rbuf;
     delete[]gbuf;
